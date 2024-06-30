@@ -1,0 +1,20 @@
+[user]
+	email = abu@360erp.com
+	name = Antonio Buric
+	signingkey = BF837796741C7CF1
+[credential]
+	helper=/usr/bin/gp credential-helper
+[core]
+	editor = code --wait
+	compression = 0
+	sshCommand = ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+[pull]
+	rebase = false
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[rebase]
+	instructionFormat = (%an <%ae>) %s
