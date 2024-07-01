@@ -16,9 +16,20 @@ install_oh_my_bash() {
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 }
 
+# Function to install powerline
+check_powerline_installed() {
+    if ! command -v powerline &> /dev/null; then
+        echo "powerline could not be found, installing powerline..."
+        sudo apt-get update && sudo apt-get install -y powerline
+    else
+        echo "powerline is already installed."
+    fi
+}
+
 # Main script
 main() {
     check_curl_installed
+    check_powerline_installed
     install_oh_my_bash
 }
 
